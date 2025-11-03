@@ -47,14 +47,14 @@ let avisosData = [
         titulo: "Manutenção da Piscina",
         conteudo: "A piscina estará fechada para manutenção nos dias 15 e 16 de dezembro.",
         tipo: "info",
-        data: "2024-12-10"
+        data: "2025-12-10"
     },
     {
         id: 2,
         titulo: "Reunião de Condomínio", 
         conteudo: "Reunião extraordinária marcada para o dia 20/12 às 19h no salão de festas.",
         tipo: "warning",
-        data: "2024-12-08"
+        data: "2025-12-08"
     }
 ];
 
@@ -1847,4 +1847,5 @@ style.textContent = `
         animation-delay: 0.2s;
     }
 `;
+
 document.head.appendChild(style);
