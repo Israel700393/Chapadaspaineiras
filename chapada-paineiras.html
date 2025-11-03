@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condomínio Chapada das Paineiras</title>
+    <link rel="stylesheet" href="chapada-paineiras-soft.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-building"></i>
+                    <span>Chapada das Paineiras</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Início</a></li>
+                    <li><a href="#regras" class="nav-link">Regras</a></li>
+                    <li><a href="#avisos" class="nav-link">Avisos</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                    <li><button id="theme-toggle" class="theme-toggle">🌙 Escuro</button></li>
+                    <li><a href="#admin" class="nav-link admin-link">Admin</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Bem-vindo ao Condomínio<br><span class="highlight">Chapada das Paineiras</span></h1>
+            <p class="hero-subtitle">Seu lar, suas regras, nossa comunidade</p>
+            <div class="hero-buttons">
+                <a href="#regras" class="btn btn-primary">Ver Regras</a>
+                <a href="#avisos" class="btn btn-secondary">Avisos Importantes</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="floating-card">
+                <i class="fas fa-swimming-pool"></i>
+                <span>Piscina</span>
+            </div>
+            <div class="floating-card">
+                <i class="fas fa-utensils"></i>
+                <span>Espaço Gourmet</span>
+            </div>
+            <div class="floating-card">
+                <i class="fas fa-car"></i>
+                <span>Estacionamento</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regras Section -->
+    <section id="regras" class="regras-section">
+        <div class="container">
+            <h2 class="section-title">Regras do Condomínio</h2>
+            <div class="regras-grid">
+                <div class="regra-card" data-aos="fade-up">
+                    <div class="regra-icon">
+                        <i class="fas fa-swimming-pool"></i>
+                    </div>
+                    <h3>Piscina</h3>
+                    <ul id="regras-piscina">
+                        <li>Horário de funcionamento: 6h às 22h</li>
+                        <li>Crianças menores de 12 anos devem estar acompanhadas</li>
+                        <li>Proibido consumo de bebidas alcoólicas</li>
+                        <li>Máximo 10 pessoas por vez</li>
+                    </ul>
+                </div>
+
+                <div class="regra-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="regra-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Espaço Gourmet</h3>
+                    <ul id="regras-gourmet">
+                        <li>Reserva obrigatória com 48h de antecedência</li>
+                        <li>Limpeza após o uso é responsabilidade do usuário</li>
+                        <li>Som ambiente até 22h</li>
+                        <li>Máximo 20 pessoas</li>
+                    </ul>
+                </div>
+
+                <div class="regra-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="regra-icon">
+                        <i class="fas fa-elevator"></i>
+                    </div>
+                    <h3>Elevadores</h3>
+                    <ul id="regras-elevadores">
+                        <li>Máximo 6 pessoas ou 450kg</li>
+                        <li>Prioridade para idosos e deficientes</li>
+                        <li>Proibido fumar</li>
+                        <li>Animais devem usar coleira</li>
+                    </ul>
+                </div>
+
+                <div class="regra-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="regra-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Estacionamento</h3>
+                    <ul id="regras-estacionamento">
+                        <li>Uma vaga por apartamento</li>
+                        <li>Vagas de visitantes: máximo 2h</li>
+                        <li>Proibido lavar veículos</li>
+                        <li>Velocidade máxima: 10 km/h</li>
+                    </ul>
+                </div>
+
+                <div class="regra-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="regra-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Portaria</h3>
+                    <ul id="regras-portaria">
+                        <li>Visitantes devem ser anunciados</li>
+                        <li>Entregadores: horário comercial</li>
+                        <li>Documento obrigatório para entrada</li>
+                        <li>Portão fecha automaticamente às 22h</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avisos Section -->
+    <section id="avisos" class="avisos-section">
+        <div class="container">
+            <h2 class="section-title">Avisos Importantes</h2>
+            <div class="avisos-container" id="avisos-container">
+                <!-- Avisos serão carregados dinamicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato/Reclamações Section -->
+    <section id="contato" class="contato-section">
+        <div class="container">
+            <div class="contato-grid">
+                <div class="contato-info">
+                    <h2>Fale Conosco</h2>
+                    <p>Sua opinião é importante para melhorarmos nossa comunidade</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>(65) 99280-8795</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>sindico@chapadaspaineiras.com.br</span>
+                        </div>
+                            <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>whatsApp: (65) 99280-8795</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Seg-Sex: 8h às 18h</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contato-form">
+                    <form id="reclamacao-form">
+                        <div class="form-group">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="apartamento">Apartamento</label>
+                            <input type="text" id="apartamento" name="apartamento" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo">Tipo</label>
+                            <select id="tipo" name="tipo" required>
+                                <option value="">Selecione...</option>
+                                <option value="reclamacao">Reclamação</option>
+                                <option value="sugestao">Sugestão</option>
+                                <option value="elogio">Elogio</option>
+                                <option value="manutencao">Manutenção</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Section -->
+    <section id="admin" class="admin-section" style="display: none;">
+        <div class="container">
+            <div class="admin-header">
+                <h2>Painel Administrativo</h2>
+                <button id="logout-btn" class="btn btn-secondary">Sair</button>
+            </div>
+
+            <div class="admin-tabs">
+                <button class="tab-btn active" data-tab="dashboard-tab">Dashboard</button>
+                <button class="tab-btn" data-tab="regras-tab">Regras</button>
+                <button class="tab-btn" data-tab="avisos-tab">Avisos</button>
+                <button class="tab-btn" data-tab="mensagens-tab">Mensagens</button>
+                <button class="tab-btn" data-tab="financeiro-tab">Financeiro</button>
+                <button class="tab-btn" data-tab="moradores-tab">Moradores</button>
+                <button class="tab-btn" data-tab="relatorios-tab">Relatórios</button>
+            </div>
+
+            <!-- Tab Content -->
+            <div id="dashboard-tab" class="tab-content active">
+                <h3>Dashboard Administrativo</h3>
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-content">
+                            <h4>Total de Apartamentos</h4>
+                            <span class="card-number" id="total-apartamentos">48</span>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="card-content">
+                            <h4>Mensagens Pendentes</h4>
+                            <span class="card-number" id="mensagens-pendentes">0</span>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="card-content">
+                            <h4>Avisos Ativos</h4>
+                            <span class="card-number" id="avisos-ativos">0</span>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="card-content">
+                            <h4>Boletos Gerados</h4>
+                            <span class="card-number" id="boletos-gerados">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-activities">
+                    <h4>Atividades Recentes</h4>
+                    <div id="atividades-recentes" class="activities-list">
+                        <!-- Atividades serão carregadas aqui -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="regras-tab" class="tab-content">
+                <h3>Gerenciar Regras</h3>
+                <div class="admin-form">
+                    <select id="area-select">
+                        <option value="piscina">Piscina</option>
+                        <option value="gourmet">Espaço Gourmet</option>
+                        <option value="elevadores">Elevadores</option>
+                        <option value="estacionamento">Estacionamento</option>
+                        <option value="portaria">Portaria</option>
+                    </select>
+                    <textarea id="nova-regra" placeholder="Digite a nova regra..."></textarea>
+                    <button id="adicionar-regra" class="btn btn-primary">Adicionar Regra</button>
+                </div>
+            </div>
+
+            <div id="avisos-tab" class="tab-content">
+                <h3>Gerenciar Avisos</h3>
+                <div class="admin-form">
+                    <input type="text" id="titulo-aviso" placeholder="Título do aviso">
+                    <textarea id="conteudo-aviso" placeholder="Conteúdo do aviso..."></textarea>
+                    <select id="tipo-aviso">
+                        <option value="info">Informação</option>
+                        <option value="warning">Atenção</option>
+                        <option value="urgent">Urgente</option>
+                    </select>
+                    <button id="adicionar-aviso" class="btn btn-primary">Publicar Aviso</button>
+                </div>
+            </div>
+
+            <div id="mensagens-tab" class="tab-content">
+                <h3>Mensagens dos Moradores</h3>
+                <div id="mensagens-lista">
+                    <!-- Mensagens serão carregadas aqui -->
+                </div>
+            </div>
+
+            <div id="financeiro-tab" class="tab-content">
+                <h3>Gestão Financeira</h3>
+                <div class="financeiro-grid">
+                    <div class="financeiro-card">
+                        <h4><i class="fas fa-file-invoice"></i> Gerar Boleto</h4>
+                        <form id="boleto-form">
+                            <div class="form-row">
+                                <input type="text" name="nome" placeholder="Nome do morador" required>
+                                <input type="text" name="apartamento" placeholder="Apartamento" required>
+                            </div>
+                            <div class="form-row">
+                                <input type="text" name="cpf" placeholder="CPF" required>
+                                <input type="number" name="valor" placeholder="Valor (R$)" step="0.01" required>
+                            </div>
+                            <input type="text" name="descricao" placeholder="Descrição da cobrança" required>
+                            <div class="form-row">
+                                <input type="date" name="vencimento" required>
+                                <select name="tipo-cobranca">
+                                    <option value="condominio">Taxa de Condomínio</option>
+                                    <option value="multa">Multa</option>
+                                    <option value="extra">Cobrança Extra</option>
+                                    <option value="manutencao">Manutenção</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-download"></i> Gerar Boleto PDF
+                            </button>
+                        </form>
+                    </div>
+                    <div class="financeiro-card">
+                        <h4><i class="fas fa-receipt"></i> Gerar Nota Fiscal</h4>
+                        <form id="nota-form">
+                            <div class="form-row">
+                                <input type="text" name="nome" placeholder="Nome do cliente" required>
+                                <input type="text" name="cpf-cnpj" placeholder="CPF/CNPJ" required>
+                            </div>
+                            <div class="form-row">
+                                <input type="email" name="email" placeholder="E-mail" required>
+                                <input type="text" name="telefone" placeholder="Telefone">
+                            </div>
+                            <textarea name="endereco" placeholder="Endereço completo" required></textarea>
+                            <div class="form-row">
+                                <input type="number" name="valor" placeholder="Valor (R$)" step="0.01" required>
+                                <select name="tipo-servico">
+                                    <option value="administracao">Administração Predial</option>
+                                    <option value="manutencao">Serviços de Manutenção</option>
+                                    <option value="limpeza">Serviços de Limpeza</option>
+                                    <option value="seguranca">Serviços de Segurança</option>
+                                    <option value="outros">Outros Serviços</option>
+                                </select>
+                            </div>
+                            <textarea name="descricao-servico" placeholder="Descrição detalhada do serviço"
+                                required></textarea>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-download"></i> Gerar Nota Fiscal PDF
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="financeiro-historico">
+                    <h4>Histórico de Documentos Gerados</h4>
+                    <div id="historico-financeiro" class="historico-list">
+                        <!-- Histórico será carregado aqui -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="moradores-tab" class="tab-content">
+                <div class="tab-header">
+                    <h3><i class="fas fa-users"></i> Gestão de Moradores</h3>
+                    <div class="tab-stats">
+                        <span class="stat-item">
+                            <i class="fas fa-home"></i>
+                            <span id="total-moradores">0</span> Moradores
+                        </span>
+                        <span class="stat-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span id="moradores-ativos">0</span> Ativos
+                        </span>
+                    </div>
+                </div>
+
+                <div class="moradores-toolbar">
+                    <div class="toolbar-left">
+                        <button id="add-morador-btn" class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Novo Morador
+                        </button>
+                        <button id="import-moradores-btn" class="btn btn-secondary">
+                            <i class="fas fa-upload"></i> Importar
+                        </button>
+                        <button id="export-moradores-btn" class="btn btn-secondary">
+                            <i class="fas fa-download"></i> Exportar
+                        </button>
+                    </div>
+                    <div class="toolbar-right">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="search-morador" placeholder="Buscar por nome, apartamento...">
+                        </div>
+                        <select id="filter-status" class="filter-select">
+                            <option value="">Todos os Status</option>
+                            <option value="ativo">Ativos</option>
+                            <option value="inativo">Inativos</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="moradores-container">
+                    <div id="moradores-lista" class="moradores-grid">
+                        <!-- Lista de moradores será carregada aqui -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="relatorios-tab" class="tab-content">
+                <div class="tab-header">
+                    <h3><i class="fas fa-chart-line"></i> Relatórios e Estatísticas</h3>
+                </div>
+
+                <div class="relatorios-dashboard">
+                    <div class="relatorio-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h4>Receita Mensal</h4>
+                                <span class="stat-value" id="receita-mensal">R$ 0,00</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h4>Inadimplência</h4>
+                                <span class="stat-value" id="taxa-inadimplencia">0%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h4>Manutenções</h4>
+                                <span class="stat-value" id="total-manutencoes">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relatorios-grid">
+                    <div class="relatorio-card">
+                        <div class="card-header">
+                            <h4><i class="fas fa-calendar-alt"></i> Relatório Mensal</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="form-row">
+                                <select id="mes-relatorio">
+                                    <option value="1">Janeiro</option>
+                                    <option value="2">Fevereiro</option>
+                                    <option value="3">Março</option>
+                                    <option value="4">Abril</option>
+                                    <option value="5">Maio</option>
+                                    <option value="6">Junho</option>
+                                    <option value="7">Julho</option>
+                                    <option value="8">Agosto</option>
+                                    <option value="9">Setembro</option>
+                                    <option value="10">Outubro</option>
+                                    <option value="11">Novembro</option>
+                                    <option value="12">Dezembro</option>
+                                </select>
+                                <input type="number" id="ano-relatorio" value="2024" min="2020" max="2030">
+                            </div>
+                            <button id="gerar-relatorio-mensal" class="btn btn-primary btn-block">
+                                <i class="fas fa-chart-bar"></i> Gerar Relatório PDF
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="relatorio-card">
+                        <div class="card-header">
+                            <h4><i class="fas fa-users"></i> Relatório de Moradores</h4>
+                        </div>
+                        <div class="card-content">
+                            <p>Lista completa de moradores com informações de contato</p>
+                            <button id="gerar-relatorio-moradores" class="btn btn-primary btn-block">
+                                <i class="fas fa-users"></i> Gerar Lista PDF
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="relatorio-card">
+                        <div class="card-header">
+                            <h4><i class="fas fa-money-bill-wave"></i> Relatório Financeiro</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="form-row">
+                                <input type="date" id="data-inicio" required>
+                                <input type="date" id="data-fim" required>
+                            </div>
+                            <button id="gerar-relatorio-financeiro" class="btn btn-primary btn-block">
+                                <i class="fas fa-chart-pie"></i> Gerar Relatório
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="relatorio-card">
+                        <div class="card-header">
+                            <h4><i class="fas fa-database"></i> Backup e Restauração</h4>
+                        </div>
+                        <div class="card-content">
+                            <p>Faça backup completo dos dados do sistema</p>
+                            <div class="backup-actions">
+                                <button id="backup-dados" class="btn btn-secondary btn-block">
+                                    <i class="fas fa-download"></i> Fazer Backup
+                                </button>
+                                <input type="file" id="restore-file" accept=".json" style="display: none;">
+                                <button id="restore-dados" class="btn btn-warning btn-block">
+                                    <i class="fas fa-upload"></i> Restaurar Backup
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Acesso Administrativo</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Usuário</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Adicionar/Editar Morador -->
+    <div id="morador-modal" class="modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2 id="morador-modal-title">
+                    <i class="fas fa-user-plus"></i> Adicionar Morador
+                </h2>
+                <span class="close" id="close-morador-modal">&times;</span>
+            </div>
+            <form id="morador-form">
+                <div class="modal-body">
+                    <div class="form-section">
+                        <h4><i class="fas fa-user"></i> Dados Pessoais</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="morador-nome">Nome Completo *</label>
+                                <input type="text" id="morador-nome" name="nome" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="morador-cpf">CPF</label>
+                                <input type="text" id="morador-cpf" name="cpf" placeholder="000.000.000-00">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="morador-email">E-mail *</label>
+                                <input type="email" id="morador-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="morador-telefone">Telefone *</label>
+                                <input type="text" id="morador-telefone" name="telefone" placeholder="(00) 00000-0000"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="morador-nascimento">Data de Nascimento</label>
+                                <input type="date" id="morador-nascimento" name="nascimento">
+                            </div>
+                            <div class="form-group">
+                                <label for="morador-profissao">Profissão</label>
+                                <input type="text" id="morador-profissao" name="profissao">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h4><i class="fas fa-home"></i> Dados Residenciais</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="morador-apartamento">Apartamento *</label>
+                                <input type="text" id="morador-apartamento" name="apartamento" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="morador-bloco">Bloco</label>
+                                <select id="morador-bloco" name="bloco">
+                                    <option value="">Selecione...</option>
+                                    <option value="A">Bloco A</option>
+                                    <option value="B">Bloco B</option>
+                                    <option value="C">Bloco C</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="morador-tipo">Tipo de Morador</label>
+                                <select id="morador-tipo" name="tipo">
+                                    <option value="proprietario">Proprietário</option>
+                                    <option value="inquilino">Inquilino</option>
+                                    <option value="familiar">Familiar</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="morador-entrada">Data de Entrada</label>
+                                <input type="date" id="morador-entrada" name="entrada">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h4><i class="fas fa-cog"></i> Configurações</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="morador-status">Status</label>
+                                <select id="morador-status" name="status">
+                                    <option value="ativo">Ativo</option>
+                                    <option value="inativo">Inativo</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="morador-vagas">Número de Vagas</label>
+                                <input type="number" id="morador-vagas" name="vagas" min="0" max="5" value="1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="morador-observacoes">Observações</label>
+                            <textarea id="morador-observacoes" name="observacoes" rows="3"
+                                placeholder="Informações adicionais..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancel-morador">
+                        <i class="fas fa-times"></i> Cancelar
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Salvar Morador
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Confirmação -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h3 id="confirm-title">Confirmar Ação</h3>
+                <span class="close" id="close-confirm-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p id="confirm-message">Tem certeza que deseja realizar esta ação?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="confirm-cancel">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="confirm-ok">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Chapada das Paineiras</h3>
+                    <p>Condomínio residencial com qualidade de vida e segurança para toda família.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <a www.whatsApp.com.br>
+                        <p>📞 (65) 9280-8795</p>
+                    </a>
+                    <a www.E-mail.com.br>
+                        <p>📧 israelrangel021223@gmail.com</p>
+                    </a>
+                </div>
+                <div class="footer-section">
+                    <h3>Horários</h3>
+                    <p>Portaria: 24h</p>
+                    <p>Administração: 8h às 18h</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Condomínio Chapada das Paineiras. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="chapada-paineiras-new.js"></script>
+</body>
+
+</html>
